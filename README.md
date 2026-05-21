@@ -77,9 +77,9 @@ Para resolver isso, foi utilizada uma Árvore Geradora Mínima (Minimum Spanning
 
 A distância entre duas ilhas é calculada utilizando:
 
-\[
-d = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
-\]
+```text
+d = √((x1 - x2)² + (y1 - y2)²)
+```
 
 ---
 
@@ -128,7 +128,6 @@ A implementação utiliza:
 
 # Análise de Complexidade
 
-Considere:
 
 - \(m\) = número de ilhas.
 
@@ -136,15 +135,16 @@ Considere:
 
 Como o grafo é completo, o número de arestas é:
 
-\[
-\frac{m(m-1)}{2}
-\]
+```text
+m(m - 1) / 2
+```
 
 Portanto:
 
-\[
-O(m^2)
-\]
+
+```text
+O(m²)
+```
 
 ---
 
@@ -152,21 +152,21 @@ O(m^2)
 
 Cada inserção possui custo:
 
-\[
-O(\log E)
-\]
+```text
+O(log E)
+```
 
 Como existem:
 
-\[
-E = O(m^2)
-\]
+```text
+E = O(m²)
+```
 
 A complexidade total é:
 
-\[
-O(m^2 \log m)
-\]
+```text
+O(m² log m)
+```
 
 ---
 
@@ -174,11 +174,11 @@ O(m^2 \log m)
 
 As operações possuem custo amortizado praticamente constante:
 
-\[
-O(\alpha(m))
-\]
+```text
+O(α(m))
+```
 
-onde \(\alpha\) é a função inversa de Ackermann.
+onde α é a função inversa de Ackermann.
 
 ---
 
@@ -186,9 +186,9 @@ onde \(\alpha\) é a função inversa de Ackermann.
 
 A complexidade dominante do algoritmo é:
 
-\[
-O(m^2 \log m)
-\]
+```text
+O(m² log m)
+```
 
 ---
 

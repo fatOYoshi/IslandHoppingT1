@@ -196,10 +196,10 @@ O(m² log m)
 
 
 ```md
-![acceptedImage.png](./evidencias/acceptedImage.png)
+![Accepted](./evidencias/acceptedImage.png)
 ```
 
 ```md
 
-![acceptedImageZoomed.png](./evidencias/acceptedImageZoomed.png)
+![AcceptedImageZoomed](./evidencias/acceptedImageZoomed.png)
 ```

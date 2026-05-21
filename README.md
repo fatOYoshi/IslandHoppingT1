@@ -195,11 +195,8 @@ O(m² log m)
 # Comprovação de Accepted
 
 
-```md
+
 ![Accepted](./evidencias/acceptedImage.png)
-```
 
-```md
 
-![AcceptedImageZoomed](./evidencias/acceptedImageZoomed.png)
-```
+<img src="./evidencias/acceptedImage.png" width="700">

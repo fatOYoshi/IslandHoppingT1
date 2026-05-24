@@ -50,14 +50,12 @@ public class Main {
                 if (!uf.connected(v, w)) {
                     uf.union(v, w);
 
-                    System.out.println(v + " - " + w + " : " + e.weight());
-
                     totalWeight += e.weight();
                     edgesCount++;
                 }
             }
 
-            System.out.println("Custo usando MST:");
+
             System.out.printf(Locale.US, "%.12f\n", totalWeight);
         }
 

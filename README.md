@@ -20,20 +20,12 @@ https://open.kattis.com/problems/islandhopping
 ---
 
 # Como Executar a Solução
-
-## Compilar
-```bash
-javac IslandHopping.java
-```
-
-## Executar
-```bash
-java IslandHopping
-```
+Nesse exemplo, a entrada do repositório está sendo usada diretamente como input no Scanner presente na Main. Assim, basta executar a classe principal. A saída será impressa no console.
 
 ---
 
 # Entrada de Exemplo
+Nessa entrada, foram usado dois casos. Um mais curto e outro mais robusto.
 
 ```text
 2
@@ -58,7 +50,7 @@ java IslandHopping
 
 ```text
 2.000000000000
-218.393430703341
+168.010157092734
 ```
 
 ---
@@ -101,6 +93,7 @@ Foi utilizado o algoritmo de Kruskal para encontrar a MST.
 ---
 
 # Estruturas de Dados Utilizadas
+Para a implementação, foram usadas as classes do Algs4 em Java, porém, de forma mais limpa e ajustada para ser compilado dentro da Main. A lógica de programação continua a mesma.
 
 ## Edge
 Classe responsável por representar uma aresta:
@@ -114,11 +107,18 @@ Fila de prioridade mínima implementada utilizando Heap Binário.
 Responsável por:
 - armazenar as arestas;
 - retornar sempre a aresta de menor peso.
+  
+Operações principais:
+- insert → O(log E)
+- delMin → O(log E)
 
 ## UF (Union-Find)
-Estrutura utilizada para:
-- verificar conectividade;
-- evitar ciclos.
+Utilizado pelo algoritmo de Kruskal para controlar os componentes conectados do grafo.
+
+Para cada aresta escolhida:
+- verifica se os vértices já pertencem ao mesmo conjunto;
+- caso pertençam, a aresta é descartada para evitar ciclos;
+- caso contrário, os conjuntos são unidos.
 
 A implementação utiliza:
 - compressão de caminho;
@@ -129,21 +129,21 @@ A implementação utiliza:
 # Análise de Complexidade
 
 
-- \(m\) = número de ilhas.
+- \(n\) = número de ilhas.
 
 ## Construção do Grafo
 
 Como o grafo é completo, o número de arestas é:
 
 ```text
-m(m - 1) / 2
+n(n - 1) / 2
 ```
 
 Portanto:
 
 
 ```text
-O(m²)
+O(n²)
 ```
 
 ---
@@ -159,13 +159,13 @@ O(log E)
 Como existem:
 
 ```text
-E = O(m²)
+E = O(n²)
 ```
 
 A complexidade total é:
 
 ```text
-O(m² log m)
+O(n² log n)
 ```
 
 ---
@@ -175,10 +175,8 @@ O(m² log m)
 As operações possuem custo amortizado praticamente constante:
 
 ```text
-O(α(m))
+O(1)
 ```
-
-onde α é a função inversa de Ackermann.
 
 ---
 
@@ -187,11 +185,24 @@ onde α é a função inversa de Ackermann.
 A complexidade dominante do algoritmo é:
 
 ```text
-O(m² log m)
+O(n² log n)
 ```
 
 ---
+# Variação de MST
 
+Não foi utilizada nenhuma variação específica.
+
+Foi aplicada a versão clássica do algoritmo de Kruskal para construção da Árvore Geradora Mínima.
+
+---
+# Casos Especiais
+
+- Caso exista apenas uma ilha, o custo total será 0.
+- Como o grafo é completo, sempre existe uma MST válida.
+- Distâncias iguais entre arestas podem gerar árvores diferentes, mas todas terão custo mínimo equivalente.
+- O algoritmo encerra quando forem escolhidas m−1 arestas.
+---
 # Comprovação de Accepted
 
 

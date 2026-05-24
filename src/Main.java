@@ -1,12 +1,16 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Locale;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        Scanner scanner = new Scanner(
+                new File("dados/entradas_do_problema.txt")
+        ).useLocale(Locale.US);
 
         if (!scanner.hasNextInt()) return;
         int n = scanner.nextInt();
@@ -45,12 +49,15 @@ public class Main {
 
                 if (!uf.connected(v, w)) {
                     uf.union(v, w);
+
+                    System.out.println(v + " - " + w + " : " + e.weight());
+
                     totalWeight += e.weight();
                     edgesCount++;
                 }
             }
 
-
+            System.out.println("Custo usando MST:");
             System.out.printf(Locale.US, "%.12f\n", totalWeight);
         }
 

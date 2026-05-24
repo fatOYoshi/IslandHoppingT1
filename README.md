@@ -207,7 +207,4 @@ Foi aplicada a versão clássica do algoritmo de Kruskal para construção da Á
 
 
 
-![Accepted](./evidencias/acceptedImage.png)
-
-
 <img src="./evidencias/acceptedImage.png" width="700">
